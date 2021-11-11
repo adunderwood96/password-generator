@@ -9,7 +9,15 @@ function generatePassword() {
     var uppercaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     var specialArray = ["@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+"];
 
-    function questions()
+// Generate Options Questions for user input
+
+var numCharacter = prompt ("How many character do you want between 8 and 128?");
+var numbers = confirm ("Do you want numbers in your password?");
+var uppercases = confirm ("Do you want Uppercase letters in your password?");
+var lowercase= confirm ("you want lowercase letters in your password?");
+var characters = confirm ("you want special characters in your password?");
+
+// Password Length
 
     function writePassword() {
         var password = generatePassword();
