@@ -1,56 +1,59 @@
 // Assignment code here
-var generateBtn = document.querySelector("#generate");
+document.querySelector("#generate").addEventListener("click", writePassword);
 
+var generateBtn = document.querySelector("#generate");
+var copyToClipBoardButton = document.getElementById("copytoclipboard");
+
+
+// Character Arrays
+var numbersArray = /[0-9]/g;
+var lowerAlphaArray = /[a-z]/g;
+var upperAlphaArray = /[A-Z]/g;
+var specialArray = ['@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '' = '', '+'];
+
+var pwdCharacters = [];
+
+
+// Prompts for Password
 function generatePassword() {
 
-  // Character Arrays
-  var numbersArray = /[0-9]/g;
-  var lowerAlphaArray = /[a-z]/g;
-  var upperAlphaArray = /[A-Z]/g;
-  var specialArray = ['@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '' = '', '+'];
-
-  var newPwd = [];
-  var pwdCharacters = [];
-
-  // Generate Password Prompts
-  var pwdLength = prompt("How many characters would you like your password to contain?");
-  var numbers = confirm("Do you want numbers in your password?");
-  var upperAlpha = confirm("Do you want numbers in your password?");
-  var lowerAlpha = confirm("you want lowercase letters in your password?")
-
-  // Password Length
-
-  while (pwdLength < 8 || pwdLength > 128); {
-    alert("Password must be between 8 to 128 characters in length");
+  // Loop if length does not meet requirements
+  while(pwdLength <= 8 || pwdLength >= 128); {
+    var pwdLength = prompt("How many characters would you like your password to contain?");
   }
+
   // Let User know how many characters will be in password
-  alert('Your password will contain ${pwdLength} characters');
+  alert(`Your password will contain ${pwdLength} characters`);
 
   // Password Character Contains Conditions:
-  if (numbers) {
+  if(numbers) {
+    var numbers = confirm("Click OK if you would like numbers in your password");
     pwdCharacters = pwdCharacters.concat(numbersArray);
 
   }
 
-  if (upperAlpha) {
+  if(upperAlpha) {
+    var upperAlpha = confirm("Click OK if you would like uppercase letters in your password");
     pwdCharacters = pwdCharacters.concat(upperAlphaArray);
 
   }
 
-  if (lowerAlpha) {
+  if(lowerAlpha) {
+    var lowerAlpha = confirm("Click OK if you would like lowercase letters in your password");
     pwdCharacters = pwdCharacters.concat(lowerAlphaArray);
 
   }
 
-  if (special) {
+  if(special) {
+    var special = confirm("Click OK if you would like special characters, such as '!@#$^&*-_=+' in your password");
     pwdCharacters = pwdCharacters.concat(specialArray);
   }
   console.log(pwdCharacters)
 
-
-  for (var i = 0; i < numCharacter; i++) {
-
-    userArray.push(pwdCharacters[Math.floor(Math.random() * pwdCharacters.length)]);
+var = newPwd = [];
+for (var i = 0; i < confirmLength; i++) {
+    newPwd = newPwd + pwdCharacters.push[Math.floor(Math.random() * pwdCharacters.length)];
+    console.log(newPwd)
   }
 
   return newPwd.join("");
@@ -66,6 +69,11 @@ function writePassword() {
 }
 
 function copyToClipboard() {
+  document.getElementById("display").select();
+
+  document.execCommand("Copy");
+
+  alert("Your password has now been copied to the clipboard");
 }
 
 // Add event listener to generate button
