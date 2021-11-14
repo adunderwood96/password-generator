@@ -19,7 +19,6 @@ function generatePassword() {
     console.log(pwdLength)
   }
 
-  // let User know how many characters will be in password
   else {
     alert('Password must be between 8 to 128 characters in length! Click Generate Password to restart.');
     return null;
