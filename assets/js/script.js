@@ -1,77 +1,82 @@
 // Assignment code here
-var generateBtn = document.querySelector("#generate");
 
-// Character Arrays
-var numbersArray = ['0,1,2,3,4,5,6,7,8,9'];
-var lowerAlphaArray = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-var upperAlphaArray = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-var specialArray = ['@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '' = '', '+'];
+const generateBtn = document.querySelector('#generate');
 
-var pwdCharacters = "";
 
-// Prompts for Password
 function generatePassword() {
-  // Loop if length does not meet requirements
-  var pwdLength = window.prompt("How many characters would you like your password to contain?");
 
-  while (pwdLength < 8 || pwdLength > 128) {
-    window.alert("Password must be between 8 to 128 characters in length!");
-    return generatePassword();
+  // Character Arrays
+  const numbersArray = ['0,1,2,3,4,5,6,7,8,9'];
+  const lowerAlphaArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  const upperAlphaArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  const specialArray = ['@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '' = '', '+'];
+
+  const pwdCharacters = '';
+  const newPwd = '';
+
+  // Prompts for Password
+  const pwdLength = prompt('How many characters would you like your password to contain?');
+
+  // Loop if length does not meet requirements
+  if (pwdLength < 8 && pwdLength > 128) {
+    alert('Password must be between 8 to 128 characters in length!');
+    console.log(pwdLength)
   }
 
-  // Let User know how many characters will be in password
-  if (isNan(pwdLength)) {
-    window.alert(`You must choose a character length between 8 to 128 characters!`);
+  // const User know how many characters will be in password
+  else {
+    alert(`You must choose a character length between 8 to 128 characters!`);
     return null;
   }
 
   // Password Character Contains Conditions:
   if (numbers) {
-    var numbers = window.confirm("Click OK if you would like numbers in your password");
-    pwdCharacters = pwdCharacters.concat(numbersArray);
+    const numbers = confirm('Click OK if you would like numbers in your password');
+    pwdCharacters += numbersArray
 
   }
 
   if (upperAlpha) {
-    var upperAlpha = window.confirm("Click OK if you would like uppercase letters in your password");
-    pwdCharacters = pwdCharacters.concat(upperAlphaArray);
+    const upperAlpha = confirm('Click OK if you would like uppercase letters in your password');
+    pwdCharacters += upperAlphaArray
 
   }
 
   if (lowerAlpha) {
-    var lowerAlpha = window.confirm("Click OK if you would like lowercase letters in your password");
-    pwdCharacters = pwdCharacters.concat(lowerAlphaArray);
+    const lowerAlpha = confirm('Click OK if you would like lowercase letters in your password');
+    pwdCharacters += lowerAlphaArray
 
   }
 
   if (special) {
-    var special = window.confirm("Click OK if you would like special characters, such as '!@#$^&*-_=+' in your password");
-    pwdCharacters = pwdCharacters.concat(specialArray);
+    const special = confirm('Click OK if you would like special characters in your password');
+    pwdCharacters += specialArray
 
   }
-  // console.log("pwdCharacters worked")
 
-  var newPwd = "";
-
-  for (var i = 0; i < confirmLength; i++) {
-    var pwdCharacters = Math.floor(Math.random() * userChoices.length);
-    var character = newPwd[randomNum];
-    console.log(character);
-    char.push(character);
+  if (
+    !lowerAlpha && !upperAlpha && !numbers && !special
+  ) {
+    return alert('Please select at least one character criteria for your password!');
+    
   }
 
-  return newPwd("");
+  for (const i = 0; i < pwdLength; i++) {
+    const pwdCharacters = Math.floor(Math.random() * userChoices.length);
+    const character = newPwd[randomNum];
+  }
+
+  return newPwd;
 }
 
 generatePassword();
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  const password = generatePassword();
+  const passwordText = document.querySelector('#password');
   passwordText.value = password;
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-console.log(generateBtn)
+generateBtn.addEventListener('click', writePassword);
