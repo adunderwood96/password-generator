@@ -5,8 +5,8 @@ const generateBtn = document.querySelector('#generate');
 
 function generatePassword(){
   const numbersArray = '1234567890';
-  const upperAlphaArray = /[a-z];g/
-  const lowerAlphaArray = /[A-Z]g/;
+  const upperAlphaArray = /[a-z]/g;
+  const lowerAlphaArray = /[A-Z]/g;
   const specialArray = '~!@#$%^&*()_+{}:?><;.,';
   const pwdCharacters = '';
   const password = '';
