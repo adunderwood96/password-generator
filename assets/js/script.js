@@ -1,38 +1,39 @@
 // Assignment code here
 
-const generateBtn = document.querySelector('#generate');
+let generateBtn = document.querySelector('#generate');
 
 
-function generatePassword(){
-  const numbersArray = '1234567890';
-  const upperAlphaArray = /[a-z]/g;
-  const lowerAlphaArray = /[A-Z]/g;
-  const specialArray = '~!@#$%^&*()_+{}:?><;.,';
-  const pwdCharacters = '';
-  const password = '';
+function generatePassword() {
+  let numbersArray = '1234567890';
+  let upperAlphaArray = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let lowerAlphaArray = 'abcdefghijklmnopqrstuvwxyz';
+  let specialArray = '~!@#$%^&*()_+{}:?><;.,';
+  let password = '';
+  let pwdCharacters = '';
 
-  // Prompts for Password
-  const pwdLength = prompt('How many characters would you like your password to contain?');
+  // Password Length Requirements
+  let pwdLength = prompt('How many characters would you like your password to contain?');
 
   // Loop if length does not meet requirements
   if (pwdLength >= 8 && pwdLength <= 128) {
     console.log(pwdLength)
   }
 
-  // const User know how many characters will be in password
+  // let User know how many characters will be in password
   else {
-    alert('Password must be between 8 to 128 characters in length!');
+    alert('Password must be between 8 to 128 characters in length! Click Generate Password to restart.');
     return null;
   }
+// add in alert for how many characters password will have (length of pwd)!
+
+  // Character Criteria Prompts
+  let numbers = confirm('Click OK if you would like numbers in your password');
+  let upperAlpha = confirm('Click OK if you would like uppercase letters in your password');
+  let lowerAlpha = confirm('Click OK if you would like lowercase letters in your password');
+  let special = confirm('Click OK if you would like special characters in your password');
 
   // Password Character Contains Conditions:
-  // Prompts
-  const numbers = confirm('Click OK if you would like numbers in your password');
-  const upperAlpha = confirm('Click OK if you would like uppercase letters in your password');
-  const lowerAlpha = confirm('Click OK if you would like lowercase letters in your password');
-  const special = confirm('Click OK if you would like special characters in your password');
-
-  // At least one character criteria must be met
+  // At least one criteria must be met for pwd characters
 
   // numbers array characters
   if (numbers) {
@@ -58,22 +59,20 @@ function generatePassword(){
   if (
     !numbers && !upperAlpha && !lowerAlpha && !special
   ) {
-    return alert('Please select at least one character type criteria for your password!');
+    return alert('Please select at least one character type for your password criteria! Click Generate Password to restart.');
   }
 
-  for (const i = 0; i < pwdLength; i++) {
-    password +=pwdCharacters[Math.floor(Math.random() * pwdCharacters.length)];
+  for (let i = 0; i < pwdLength; i++) {
+    password += pwdCharacters[Math.floor(Math.random() * pwdCharacters.length)];
   }
-
   return password;
 }
 
-generatePassword();
 
 // Write password to the #password input
 function writePassword() {
-  const password = generatePassword();
-  const passwordText = document.querySelector('#password');
+  let password = generatePassword();
+  let passwordText = document.querySelector('#password');
   passwordText.value = password;
 }
 
