@@ -10,8 +10,8 @@ https://adunderwood96.github.io/password-generator/
 
 ### Site Preview:
 
-![Start of Generating PWD] (https://github.com/adunderwood96/password-generator/blob/f45db5787e832720681f1704b3449a0868203da0/assets/images/start.png)
+! [Start of Generating PWD] (https://github.com/adunderwood96/password-generator/blob/main/assets/images/start.png?raw=true)
 
-![Restart due to insufficient character length] (https://github.com/adunderwood96/password-generator/blob/f45db5787e832720681f1704b3449a0868203da0/assets/images/restart.png)
+! [Restart due to insufficient character length] (https://github.com/adunderwood96/password-generator/blob/f45db5787e832720681f1704b3449a0868203da0/assets/images/restart.png)
 
-![Final Result:Randomized PWD] (https://github.com/adunderwood96/password-generator/blob/f45db5787e832720681f1704b3449a0868203da0/assets/images/result.png)
+! [Final Result:Randomized PWD] (https://github.com/adunderwood96/password-generator/blob/f45db5787e832720681f1704b3449a0868203da0/assets/images/result.png)
