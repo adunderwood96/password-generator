@@ -23,13 +23,14 @@ function generatePassword() {
     alert('Password must be between 8 to 128 characters in length! Click Generate Password to restart.');
     return null;
   }
-// add in alert for how many characters password will have (length of pwd)!
+
+  alert(`Your password length will be ${pwdLength} characters.`);
 
   // Character Criteria Prompts
-  let numbers = confirm('Click OK if you would like numbers in your password');
-  let upperAlpha = confirm('Click OK if you would like uppercase letters in your password');
-  let lowerAlpha = confirm('Click OK if you would like lowercase letters in your password');
-  let special = confirm('Click OK if you would like special characters in your password');
+  let numbers = confirm('Click OK if you would like numbers in your password.');
+  let upperAlpha = confirm('Click OK if you would like uppercase letters in your password.');
+  let lowerAlpha = confirm('Click OK if you would like lowercase letters in your password.');
+  let special = confirm('Click OK if you would like special characters in your password.');
 
   // Password Character Contains Conditions:
   // At least one criteria must be met for pwd characters
