@@ -1,18 +1,18 @@
 // Assignment code here
 
-let generateBtn = document.querySelector('#generate');
+var generateBtn = document.querySelector('#generate');
 
 
 function generatePassword() {
-  let numbersArray = '1234567890';
-  let upperAlphaArray = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  let lowerAlphaArray = 'abcdefghijklmnopqrstuvwxyz';
-  let specialArray = '~!@#$%^&*()_+{}:?><;.,';
-  let password = '';
-  let pwdCharacters = '';
+  var numbersArray = '1234567890';
+  var upperAlphaArray = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var lowerAlphaArray = 'abcdefghijklmnopqrstuvwxyz';
+  var specialArray = '~!@#$%^&*()_+{}:?><;.,';
+  var password = '';
+  var pwdCharacters = '';
 
   // Password Length Requirements
-  let pwdLength = prompt('How many characters would you like your password to contain?');
+  var pwdLength = prompt('How many characters would you like your password to contain?');
 
   // Loop if length does not meet requirements
   if (pwdLength >= 8 && pwdLength <= 128) {
@@ -27,10 +27,10 @@ function generatePassword() {
   alert(`Your password length will be ${pwdLength} characters.`);
 
   // Character Criteria Prompts
-  let numbers = confirm('Click OK if you would like numbers in your password.');
-  let upperAlpha = confirm('Click OK if you would like uppercase letters in your password.');
-  let lowerAlpha = confirm('Click OK if you would like lowercase letters in your password.');
-  let special = confirm('Click OK if you would like special characters in your password.');
+  var numbers = confirm('Click OK if you would like numbers in your password.');
+  var upperAlpha = confirm('Click OK if you would like uppercase varters in your password.');
+  var lowerAlpha = confirm('Click OK if you would like lowercase varters in your password.');
+  var special = confirm('Click OK if you would like special characters in your password.');
 
   // Password Character Contains Conditions:
   // At least one criteria must be met for pwd characters
@@ -62,7 +62,7 @@ function generatePassword() {
     return alert('Please select at least one character type for your password criteria! Click Generate Password to restart.');
   }
 
-  for (let i = 0; i < pwdLength; i++) {
+  for (var i = 0; i < pwdLength; i++) {
     password += pwdCharacters[Math.floor(Math.random() * pwdCharacters.length)];
   }
   return password;
@@ -71,8 +71,8 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
-  let password = generatePassword();
-  let passwordText = document.querySelector('#password');
+  var password = generatePassword();
+  var passwordText = document.querySelector('#password');
   passwordText.value = password;
 }
 
